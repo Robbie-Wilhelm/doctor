@@ -16,7 +16,7 @@ doctor ist a little tool to generate book like
 
 * php
 * Michel Fortin's markdownextra (included)
-* Tobiasz Cudnik's phpQuery
+* Tobiasz Cudnik's phpQuery (included)
 
 ## install
 
@@ -26,7 +26,7 @@ doctor ist a little tool to generate book like
 * in your browser: open `http://localhost/doctor/index.php/doctor`
 * you should see this document
 
-## useage
+## usesage
 
 all documents/ books should be placed or symlinked into the `books` folder.
 documents consiting of multiple files should be placed into subdirectories.
