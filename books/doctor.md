@@ -1,3 +1,9 @@
+title: doctor Documentation
+author: robbie wilhelm
+doc-levels: h2,h3
+
+
+
 # doctor
 
 doctor ist a little tool to generate book like 
@@ -59,5 +65,5 @@ change `default_layout.html` for your needs.
 
 look at the [xorc documentation](http://github.com/Robbie-Wilhelm/xorc-doc) as an example book.
 
-have fun!
+have fun! 
 
