@@ -1,6 +1,6 @@
 title: doctor Documentation
 author: robbie wilhelm
-doc-levels: h2,h3
+doc-toc-levels: h2,h3
 
 
 
@@ -51,7 +51,7 @@ your markdown file can have a header with certain metadata like:
 
 		title: xorc Dokumentation
 		author: Robbie Wilhelm
-		doc-levels: h2,h3,h4
+		doc-toc-levels: h2,h3,h4
 		doc-assets: /dev/doctor/books/xorc/assets/
 		doc-css: css/md-style.css
 		

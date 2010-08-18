@@ -1,15 +1,19 @@
 <?php
-$SELF = dirname(dirname(__FILE__));
+$BASE = dirname(dirname(__FILE__));
+# $BOOKS = $BASE."/books";
+$LIB = $BASE."/lib";
 
-require_once("$SELF/lib/markdownextra/markdown.php");
+mb_internal_encoding("UTF-8");
+require_once("$LIB/handbuch.class.php");
 
-$input = $_SERVER["PATH_TRANSLATED"];
+$bookfile = $_SERVER["PATH_TRANSLATED"];
 
-$content = file_get_contents($input);
+$hb=new Handbuch($bookfile);
 
-$content = Markdown($content);
+$hb->build_toc();
+$hb->chapters_and_sections();
+$hb->img();
 
-require($SELF."/lib/default_layout.html");
-
+print $hb->html();
 
 ?>

@@ -14,13 +14,13 @@ class Handbuch{
    public $tocL;
    public $toc;
    public $docID;
-   public $mediapath;
+
    public $source_dir;
    public $levels;
    
-   function __construct($src, $mp=null, $src_dir=null){
-      $this->mediapath = $mp;
-      $this->source_dir = $src_dir;
+   function __construct($bookfile){
+    	$src = file_get_contents($bookfile);
+      $this->source_dir = dirname($bookfile);
       
       list($meta, $src) = explode("\n\n", $src, 2);
       foreach(explode("\n", $meta) as $line){
@@ -29,7 +29,7 @@ class Handbuch{
 			if($dk=='doc'){
 				$this->doc_meta[$mk] = trim($v);
 			}else{
-				$this->meta[$dk.$mk] = trim($v);
+				if($dk) $this->meta[$dk.$mk] = trim($v);
 			}
       }
 
@@ -42,8 +42,8 @@ class Handbuch{
           $this->html = '<div id="body"><div id="cont">'.Markdown($src)."</div></div>";
       }
       
-      if ($this->doc_meta['levels']) {
-         $this->levels = explode(',', $this->doc_meta['levels']);
+      if ($this->doc_meta['toc-levels']) {
+         $this->levels = explode(',', $this->doc_meta['toc-levels']);
       } else {
          $this->levels = array('h1', 'h2');
       }
